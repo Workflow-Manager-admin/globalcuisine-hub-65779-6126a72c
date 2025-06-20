@@ -10,6 +10,9 @@ import UserFavorites from "./components/UserFavorites";
 import CuisineManager from "./components/CuisineManager";
 import { useAppContext } from "./context/AppContext";
 
+// React Router imports
+import { Routes, Route, Navigate } from "react-router-dom";
+
 /**
  * Example mock data for initial demo state (recipes and cuisines).
  */
@@ -59,8 +62,9 @@ function MainContainer() {
   /**
    * MainContainer: central hub for state and navigation.
    * Uses AppContext for global state, provides context to all feature stubs.
+   * Now enables page-level routing!
    */
-  const { state, dispatch } = useAppContext(); // Enables access as needed
+  const { state, dispatch } = useAppContext();
 
   // On mount, populate mock data if not already set
   React.useEffect(() => {
@@ -76,14 +80,52 @@ function MainContainer() {
     <>
       <Navbar />
       <main className="main-content container">
-        <SearchBar />
-        <CuisineFilter />
-        <RecipeList />
-        <RecipeDetail />
-        <UserFavorites />
-        <RecipeForm />
-        <Auth />
-        <CuisineManager />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <SearchBar />
+                <CuisineFilter />
+                <RecipeList />
+                <RecipeDetail />
+              </>
+            }
+          />
+          <Route
+            path="/favorites"
+            element={
+              <UserFavorites />
+            }
+          />
+          <Route
+            path="/add"
+            element={
+              <RecipeForm />
+            }
+          />
+          <Route
+            path="/auth"
+            element={
+              <Auth />
+            }
+          />
+          <Route
+            path="/profile"
+            element={
+              // Render Auth in profile mode, contextually handled by Auth
+              <Auth />
+            }
+          />
+          <Route
+            path="/cuisines"
+            element={
+              <CuisineManager />
+            }
+          />
+          {/* Fallback: any other route redirects to home */}
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
       </main>
     </>
   );
