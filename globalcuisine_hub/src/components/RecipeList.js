@@ -23,7 +23,16 @@ function RecipeList() {
     return matchesText && matchesCuisine;
   }
 
+  const { isAuthenticated, user } = state;
+  const { dispatch } = useAppContext();
+  const favoriteIds = user?.favorites || [];
+
   const filtered = recipes.filter(matchesFilters);
+
+  function handleFavorite(id, already) {
+    if (!isAuthenticated) return;
+    dispatch({ type: already ? "REMOVE_FAVORITE" : "ADD_FAVORITE", payload: id });
+  }
 
   if (!recipes.length) {
     return (
@@ -52,22 +61,45 @@ function RecipeList() {
           gridTemplateColumns:"repeat(auto-fit, minmax(260px,1fr))",
           gap:"18px"
         }}>
-          {filtered.map(recipe => (
-            <li key={recipe.id} style={{
-              border:"1px solid var(--border-color)",
-              borderRadius: 8,
-              background: "var(--surface)",
-              boxShadow: "0 1px 5px rgba(0,0,0,0.022)",
-              padding: "18px 18px 11px 18px"
-            }}>
-              <div style={{fontSize:"1.13rem", fontWeight: 600, color:"var(--primary)", marginBottom:"4px"}}>{recipe.name}</div>
-              <div style={{color:"var(--secondary)", fontSize:"0.98rem", marginBottom: 4}}>{recipe.cuisine}</div>
-              <div style={{fontSize: "0.96rem", color:"var(--text-secondary)", marginBottom: 7}}>{recipe.description}</div>
-              <div style={{fontSize: "0.90rem", color:"var(--text-secondary)", opacity: 0.7}}>
-                <strong>Ingredients:</strong> {recipe.ingredients && recipe.ingredients.join(", ")}
-              </div>
-            </li>
-          ))}
+          {filtered.map(recipe => {
+            const isFav = isAuthenticated && favoriteIds.includes(recipe.id);
+            return (
+              <li key={recipe.id} style={{
+                border:"1px solid var(--border-color)",
+                borderRadius: 8,
+                background: "var(--surface)",
+                boxShadow: "0 1px 5px rgba(0,0,0,0.022)",
+                padding: "18px 18px 11px 18px"
+              }}>
+                <div style={{display:"flex", justifyContent:"space-between", alignItems:"center"}}>
+                  <div style={{fontSize:"1.13rem", fontWeight: 600, color:"var(--primary)", marginBottom:"4px"}}>
+                    {recipe.name}
+                  </div>
+                  {isAuthenticated && (
+                    <button
+                      className="btn accent"
+                      style={{
+                        padding: "4px 9px",
+                        fontSize: 13,
+                        background: isFav ? "var(--secondary)" : "var(--accent)",
+                        color: isFav ? "#fff" : "#222",
+                        marginLeft: 10
+                      }}
+                      onClick={() => handleFavorite(recipe.id, isFav)}
+                      title={isFav ? "Remove from favorites" : "Add to favorites"}
+                    >
+                      {isFav ? "★" : "☆"}
+                    </button>
+                  )}
+                </div>
+                <div style={{color:"var(--secondary)", fontSize:"0.98rem", marginBottom: 4}}>{recipe.cuisine}</div>
+                <div style={{fontSize: "0.96rem", color:"var(--text-secondary)", marginBottom: 7}}>{recipe.description}</div>
+                <div style={{fontSize: "0.90rem", color:"var(--text-secondary)", opacity: 0.7}}>
+                  <strong>Ingredients:</strong> {recipe.ingredients && recipe.ingredients.join(", ")}
+                </div>
+              </li>
+            );
+          })}
         </ul>
       )}
     </section>
