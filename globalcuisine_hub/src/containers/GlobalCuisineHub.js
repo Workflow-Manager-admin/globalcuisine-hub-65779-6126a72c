@@ -3,35 +3,54 @@ import "../App.css";
 
 // PUBLIC_INTERFACE
 /**
- * Main container component for the GlobalCuisine Hub application.
- * This acts as the entry point for major features like navigation, search, and main recipe display.
- * Further subcomponents (Navbar, SearchBar, RecipeList, etc.) will be added/integrated here in upcoming steps.
+ * Main container for the GlobalCuisine Hub application.
+ * Provides layout: navigation bar, search bar (accent color), and recipe display area.
+ * Uses a light, scalable design and reserves space for future features.
  */
 function GlobalCuisineHub() {
   return (
-    <div className="app">
-      <nav className="navbar">
-        <div className="container" style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <div className="logo">
-            <span className="logo-symbol" role="img" aria-label="globe">🌍</span>
+    <div className="gch-app light-theme">
+      {/* Navigation Bar */}
+      <nav className="gch-navbar">
+        <div className="gch-navbar-content">
+          <div className="gch-logo">
+            <span className="gch-logo-symbol" role="img" aria-label="globe">
+              🌍
+            </span>
             GlobalCuisine Hub
           </div>
-          {/* Placeholder for future nav links & user actions */}
-        </div>
-      </nav>
-      <main>
-        <div className="container" style={{ paddingTop: 120 }}>
-          <div className="hero">
-            <span className="subtitle" style={{ color: "var(--base-light)" }}>
-              Discover & Manage Cuisines from Around the World
-            </span>
-            <h1 className="title" style={{ color: "var(--base-light)" }}>GlobalCuisine Hub</h1>
-            <div className="description">
-              Welcome! This hub brings together global recipes, cuisine management, and a user-friendly recipe search engine. Start exploring the culinary world.
-            </div>
-            {/* Additional feature integration (search, filtering, auth, etc.) will appear here */}
+          {/* Reserved for nav links or user actions */}
+          <div className="gch-navbar-links">
+            {/* e.g., <a href="#">Login</a> */}
           </div>
         </div>
+      </nav>
+
+      {/* Main content area */}
+      <main className="gch-main">
+        {/* Search Bar */}
+        <section className="gch-searchbar-section">
+          <input
+            type="text"
+            placeholder="Search for recipes, cuisines, or ingredients…"
+            className="gch-searchbar"
+            aria-label="Search recipes"
+            disabled // Remove this once functionality is added
+          />
+          {/* Future: <button className="gch-search-btn">Search</button> */}
+        </section>
+
+        {/* Recipe Area */}
+        <section className="gch-recipe-area">
+          <div className="gch-recipe-area-placeholder">
+            {/* Placeholder text for initial empty state */}
+            <h2>Recipe Feed</h2>
+            <p>
+              Explore delicious recipes from around the world.<br />
+              (Recipe results will appear here as features are added.)
+            </p>
+          </div>
+        </section>
       </main>
     </div>
   );

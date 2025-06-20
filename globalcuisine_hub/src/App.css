@@ -1,9 +1,178 @@
 :root {
-  --base-light: #00ffff;
-  --base-dark: #00008b;
-  --text-color: #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.7);
-  --border-color: rgba(255, 255, 255, 0.1);
+  --primary: #FF6347;    /* Tomato - used for navbar */
+  --secondary: #4CAF50;  /* Green - buttons/highlights */
+  --accent: #FFC107;     /* Amber - search */
+  --light-bg: #f9f9f9;
+  --dark-bg: #ffffff;
+  --text-color: #1A1A1A;
+  --text-secondary: #444444;
+  --border-color: #ebebeb;
+}
+
+.light-theme {
+  background: var(--light-bg);
+  color: var(--text-color);
+}
+
+.gch-app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--light-bg);
+  color: var(--text-color);
+}
+
+.gch-navbar {
+  width: 100%;
+  background: var(--primary);
+  color: #fff;
+  box-shadow: 0 2px 8px 0 rgba(40, 36, 36, 0.06);
+  padding: 0;
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.gch-navbar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+  height: 60px;
+  padding: 0 32px;
+}
+
+.gch-logo {
+  font-size: 1.33rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.gch-logo-symbol {
+  font-size: 1.5rem;
+  color: var(--accent);
+}
+
+.gch-navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.gch-navbar a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.18s;
+}
+.gch-navbar a:hover {
+  color: var(--secondary);
+}
+
+.gch-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 88px 0 0 0; /* 60px for navbar + 28px gap */
+}
+
+.gch-searchbar-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 28px 32px 10px 32px;
+  padding: 0;
+}
+
+.gch-searchbar {
+  flex: 1;
+  padding: 12px 20px;
+  border: 2px solid var(--accent);
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  background: #fffbe9;
+  color: var(--text-color);
+  margin-right: 0;
+  transition: border-color 0.2s;
+}
+
+.gch-searchbar:focus {
+  border-color: var(--secondary);
+  background: #fffff3;
+}
+
+.gch-searchbar:disabled {
+  opacity: 0.85;
+  background: #fff3cd;
+  cursor: not-allowed;
+}
+
+.gch-recipe-area {
+  min-height: 320px;
+  margin: 0 32px 32px 32px;
+  background: var(--dark-bg);
+  border-radius: 13px;
+  box-shadow: 0 2px 9px 0 rgba(50,60,60,0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.gch-recipe-area-placeholder {
+  text-align: center;
+  color: var(--text-secondary);
+  padding: 56px 0;
+  width: 100%;
+}
+
+.gch-recipe-area-placeholder h2 {
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.gch-recipe-area-placeholder p {
+  margin: 0;
+  font-size: 1.08rem;
+  color: var(--text-secondary);
+}
+
+.btn, .gch-btn {
+  background-color: var(--secondary);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 9px 18px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn:hover, .gch-btn:hover {
+  background: #388e3c;
+}
+
+@media (max-width: 600px) {
+  .gch-navbar-content, .gch-main {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .gch-searchbar-section, .gch-recipe-area {
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+  .gch-navbar-content {
+    padding: 0 12px;
+  }
 }
 
 body {
