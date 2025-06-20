@@ -8,13 +8,16 @@ import Auth from "./components/Auth";
 import RecipeForm from "./components/RecipeForm";
 import UserFavorites from "./components/UserFavorites";
 import CuisineManager from "./components/CuisineManager";
+import { useAppContext } from "./context/AppContext";
 
 // PUBLIC_INTERFACE
 function MainContainer() {
   /**
    * MainContainer: central hub for state and navigation.
-   * State management and feature routing will be added later.
+   * Uses AppContext for global state, provides context to all feature stubs.
    */
+  const { state, dispatch } = useAppContext(); // Enables access as needed
+
   return (
     <>
       <Navbar />

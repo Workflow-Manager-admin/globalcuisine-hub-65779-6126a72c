@@ -1,14 +1,17 @@
 import React from 'react';
 import './App.css';
 import MainContainer from './MainContainer';
+import { AppProvider } from './context/AppContext';
 
 // PUBLIC_INTERFACE
 function App() {
-  /** Root application component, prepares the primary container for the GlobalCuisine Hub. */
+  /** Root application component, provides global state via AppProvider. */
   return (
-    <div className="app">
-      <MainContainer />
-    </div>
+    <AppProvider>
+      <div className="app">
+        <MainContainer />
+      </div>
+    </AppProvider>
   );
 }
 
