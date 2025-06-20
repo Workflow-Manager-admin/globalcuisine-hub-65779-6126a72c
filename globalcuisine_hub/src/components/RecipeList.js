@@ -49,6 +49,13 @@ function RecipeList() {
         fontWeight: 600,
         color:"var(--primary)"
       }}>Recipes</h2>
+      <button
+        className="btn accent"
+        style={{ marginBottom: 13 }}
+        onClick={() => dispatch({ type: "SET_SELECTED_RECIPE", payload: null })}
+      >
+        Add New Recipe
+      </button>
       {filtered.length === 0 ? (
         <div style={{padding:"32px", textAlign:"center", color:"var(--secondary)", background:"#fff9ec", borderRadius:8}}>
           No recipes match your filters.
@@ -64,13 +71,20 @@ function RecipeList() {
           {filtered.map(recipe => {
             const isFav = isAuthenticated && favoriteIds.includes(recipe.id);
             return (
-              <li key={recipe.id} style={{
-                border:"1px solid var(--border-color)",
-                borderRadius: 8,
-                background: "var(--surface)",
-                boxShadow: "0 1px 5px rgba(0,0,0,0.022)",
-                padding: "18px 18px 11px 18px"
-              }}>
+              <li
+                key={recipe.id}
+                style={{
+                  border:"1px solid var(--border-color)",
+                  borderRadius: 8,
+                  background: "var(--surface)",
+                  boxShadow: "0 1px 5px rgba(0,0,0,0.022)",
+                  padding: "18px 18px 11px 18px",
+                  cursor: "pointer",
+                  transition: "box-shadow .13s"
+                }}
+                onClick={() => dispatch({ type: "SET_SELECTED_RECIPE", payload: recipe.id })}
+                title="Click to view recipe details"
+              >
                 <div style={{display:"flex", justifyContent:"space-between", alignItems:"center"}}>
                   <div style={{fontSize:"1.13rem", fontWeight: 600, color:"var(--primary)", marginBottom:"4px"}}>
                     {recipe.name}
@@ -85,7 +99,7 @@ function RecipeList() {
                         color: isFav ? "#fff" : "#222",
                         marginLeft: 10
                       }}
-                      onClick={() => handleFavorite(recipe.id, isFav)}
+                      onClick={e => { e.stopPropagation(); handleFavorite(recipe.id, isFav); }}
                       title={isFav ? "Remove from favorites" : "Add to favorites"}
                     >
                       {isFav ? "★" : "☆"}

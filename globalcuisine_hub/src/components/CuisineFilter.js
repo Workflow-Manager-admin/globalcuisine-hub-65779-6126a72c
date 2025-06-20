@@ -18,7 +18,10 @@ function CuisineFilter() {
       <button
         className="btn"
         style={{marginRight:8, background: !selected ? "var(--accent)" : ""}}
-        onClick={() => dispatch({ type: "SET_SELECTED_CUISINE", payload: null })}
+        onClick={() => {
+          dispatch({ type: "SET_SELECTED_CUISINE", payload: null });
+          dispatch({ type: "SET_SELECTED_RECIPE", payload: null });
+        }}
       >
         All
       </button>
@@ -30,7 +33,10 @@ function CuisineFilter() {
             marginRight:8,
             background: selected===c ? "var(--secondary)" : ""
           }}
-          onClick={() => dispatch({ type: "SET_SELECTED_CUISINE", payload: c })}
+          onClick={() => {
+            dispatch({ type: "SET_SELECTED_CUISINE", payload: c });
+            dispatch({ type: "SET_SELECTED_RECIPE", payload: null });
+          }}
         >
           {c}
         </button>

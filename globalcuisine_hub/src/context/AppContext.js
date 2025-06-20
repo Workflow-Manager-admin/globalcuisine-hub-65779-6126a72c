@@ -58,9 +58,20 @@ function appReducer(state, action) {
         )
       };
     case 'DELETE_RECIPE':
+      // If deleting a recipe, also remove it from any user's favorites (mock)
+      const deletedId = action.payload;
+      let newUser = state.user;
+      if (newUser && Array.isArray(newUser.favorites)) {
+        newUser = {
+          ...newUser,
+          favorites: (newUser.favorites || []).filter(id => id !== deletedId)
+        }
+      }
       return {
         ...state,
-        recipes: state.recipes.filter(recipe => recipe.id !== action.payload)
+        recipes: state.recipes.filter(recipe => recipe.id !== deletedId),
+        user: newUser,
+        favorites: (state.favorites || []).filter(id => id !== deletedId)
       };
 
     // -- CUISINES --
@@ -106,6 +117,10 @@ function appReducer(state, action) {
       return { ...state, selectedCuisine: action.payload };
     case 'SET_SEARCH_QUERY':
       return { ...state, searchQuery: action.payload };
+
+    // -- UI Support: select which recipe is being viewed/edited (null for "add new")
+    case 'SET_SELECTED_RECIPE':
+      return { ...state, selectedRecipeId: action.payload };
 
     default:
       return state;
