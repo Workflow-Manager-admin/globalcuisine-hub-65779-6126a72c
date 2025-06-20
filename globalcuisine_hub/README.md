@@ -9,6 +9,103 @@ This project provides a minimal React template with a clean, modern UI and minim
 - **Fast**: Minimal dependencies for quick loading times
 - **Simple**: Easy to understand and modify
 
+---
+
+## 🛠️ Contributing Guidelines
+
+We welcome contributions from the community! To maintain high code quality and a smooth workflow, please review the following before contributing.
+
+### Fork & Branch
+
+- **Fork** this repository to your own GitHub account.
+- Create a **feature branch** from `main` for your changes. Use meaningful names, e.g., `feature/add-auth`, `fix/navbar-bug`, or `tests/search-bar`.
+
+### Descriptive Commits
+
+- Write clear, concise commit messages. Clearly describe _what_ your change does and _why_ it is needed.
+
+### Pull Request (PR) Process and Code Reviews
+
+- Open a Pull Request (PR) against the `main` branch.
+- **Every code change must go through a code review**. We recommend these simple rules:
+  - PRs must have at least **one approval** from another contributor before merging.
+  - Provide a helpful PR description and link or screenshot relevant issues/features.
+  - Address any change requests or comments in follow-up commits.
+- Automated test and linter checks must **pass** before merging.
+
+### Where to Get Help
+
+If you have questions, please:
+- Open an issue with a clear description of the problem.
+- Join project community channels (if available) or mention a maintainer in your PR.
+- For urgent/unblocker issues, email the maintainer (see repo description).
+
+---
+
+## 🧹 Linting
+
+Code quality is enforced using [ESLint](https://eslint.org/).
+
+- Before pushing code or submitting a PR, run ESLint locally. Resolving all warnings and errors helps keep the codebase clean and consistent.
+
+To check for lint errors, run:
+
+```bash
+npx eslint src/
+```
+
+Or, with the config file (if you want to specify explicitly):
+
+```bash
+npx eslint src/ --config ./eslint.config.mjs
+```
+
+- Make sure your editor is set up for linting and auto-formatting on save if possible.
+
+---
+
+## 🧪 Testing
+
+All tests use [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) and run via [Jest](https://jestjs.io/).
+
+- Place new test files alongside the component to be tested, following the naming convention: `ComponentName.test.js`.
+- Make sure your code is covered by tests for new features or bug fixes.
+
+To run tests locally in watch mode:
+
+```bash
+npm test
+```
+
+For a single, non-interactive run (useful for CI, before merging):
+
+```bash
+CI=true npm test
+```
+
+- All tests should pass before submitting, merging, or approving a PR.
+
+---
+
+## ✅ Example Contribution Workflow
+
+1. **Fork** this repository.
+2. **Clone** your repository to your computer.
+3. Create a **feature branch** (`git checkout -b feature/add-login-ui`).
+4. **Make your changes** (write code, add tests, run lint).
+5. Run ESLint and tests:
+   ```bash
+   npx eslint src/ --config ./eslint.config.mjs
+   npm test
+   ```
+6. **Commit** and **push** your changes with a descriptive commit message.
+7. **Open a Pull Request** targeting `main`.
+8. At least **one other contributor** reviews your PR.
+9. Make requested changes (if any).
+10. When approved and checks pass, **merge** your PR!
+
+---
+
 ## Important Note: Babel Configuration
 
 This project’s `package.json` includes a `babel` section with a plugin:
@@ -61,7 +158,7 @@ The main brand colors are defined as CSS variables in `src/App.css`:
 
 ### Components
 
-This template uses pure HTML/CSS components instead of a UI framework. You can find component styles in `src/App.css`. 
+This template uses pure HTML/CSS components instead of a UI framework. You can find component styles in `src/App.css`.
 
 Common components include:
 - Buttons (`.btn`, `.btn-large`)
