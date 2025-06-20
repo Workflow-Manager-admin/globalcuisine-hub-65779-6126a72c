@@ -1,9 +1,27 @@
 :root {
+  /* Brand Theme Colors for GlobalCuisine Hub */
+  --primary: #FF6347;      /* tomato red */
+  --secondary: #4CAF50;    /* green */
+  --accent: #FFC107;       /* yellow */
+  --background: #fffefc;   /* subtle off-white for light theme */
+  --surface: #fff;
+  --text-color: #222;
+  --text-secondary: #444;
+  --border-color: #eed;
+}
+
+/* Legacy dark theme variables for reference, not active:
   --base-light: #00ffff;
   --base-dark: #00008b;
-  --text-color: #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.7);
-  --border-color: rgba(255, 255, 255, 0.1);
+*/
+
+body {
+  margin: 0;
+  font-family: 'Inter', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  background-color: var(--background);
+  color: var(--text-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -19,36 +37,37 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background: var(--background);
 }
 
 .navbar {
-  background-color: var(--base-dark);
-  padding: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid var(--border-color);
+  background-color: var(--primary);
+  color: #fff;
+  padding: 16px 0;
+  box-shadow: 0 2px 8px rgba(255,99,71,0.04);
+  border-bottom: 2px solid var(--accent);
   position: fixed;
   top: 0;
   width: 100%;
-  box-sizing: border-box;
   z-index: 100;
 }
 
 .logo {
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: 1.35rem;
+  font-weight: 700;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
+  letter-spacing: 1px;
 }
 
 .logo-symbol {
-  color: var(--base-light);
+  color: var(--accent);
+  font-size: 1.8rem;
 }
 
 .container {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 0 24px;
   width: 100%;
@@ -66,43 +85,77 @@ body {
 }
 
 .subtitle {
-  color: var(--base-light);
-  font-weight: 500;
-  font-size: 1.1rem;
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 1.2rem;
+  letter-spacing: 0.2px;
 }
 
 .title {
-  font-size: 3.5rem;
-  font-weight: 600;
+  font-size: 3rem;
+  font-weight: 700;
   line-height: 1.2;
   margin: 0;
+  color: var(--secondary);
 }
 
 .description {
-  font-size: 1.1rem;
+  font-size: 1.12rem;
   line-height: 1.5;
   color: var(--text-secondary);
-  max-width: 600px;
-  margin-bottom: 16px;
+  max-width: 650px;
+  margin-bottom: 18px;
 }
 
 .btn {
-  background-color: var(--base-light);
-  color: white;
+  background-color: var(--primary);
+  color: #fff;
   border: none;
   border-radius: 4px;
-  padding: 10px 20px;
+  padding: 10px 22px;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  margin-right: 8px;
+  transition: background 0.18s;
 }
 
 .btn:hover {
-  background-color: #7691ff;
+  background-color: var(--secondary);
+}
+
+.btn.accent {
+  background-color: var(--accent);
+  color: #222;
 }
 
 .btn-large {
-  padding: 12px 24px;
-  font-size: 1.1rem;
+  padding: 12px 28px;
+  font-size: 1.13rem;
 }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.main-content {
+  margin-top: 80px;
+  min-height: 72vh;
+  padding-bottom: 40px;
+}
+
+.stub {
+  padding: 60px 0;
+  border: 1px dashed var(--border-color);
+  text-align: center;
+  color: var(--primary);
+  background: var(--surface);
+  margin-bottom: 24px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 1.12rem;
+}
+
+/* Placeholder styles for filters, forms, etc. – extend as needed */

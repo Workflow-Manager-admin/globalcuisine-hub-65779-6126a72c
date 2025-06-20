@@ -23,3 +23,473 @@ modules by path ./.ve/ 15.1 KiB
     ./node_modules/css-loader/dist/cjs.js!./.ve/EditorOverlay.css 697 bytes [built] [code generated]
   ./.ve/EditorOverlay.jsx 1.58 KiB [built] [code generated]
 webpack 5.99.9 compiled successfully in 1212 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.4 MiB
+  asset bundle.js 1.39 MiB [emitted] (name: main)
+  asset main.ffb5748acbf76e0b6596.hot-update.js 5.16 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.ffb5748acbf76e0b6596.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.4 MiB = bundle.js 1.39 MiB main.ffb5748acbf76e0b6596.hot-update.js 5.16 KiB
+cached modules 1.26 MiB [cached] 41 modules
+runtime modules 27.5 KiB 14 modules
+./node_modules/css-loader/dist/cjs.js!./src/App.css 2.69 KiB [built] [code generated]
+webpack 5.99.9 compiled successfully in 89 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.4 MiB
+  asset bundle.js 1.39 MiB [emitted] (name: main)
+  asset main.f83620527e119ac20b78.hot-update.js 5.81 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.f83620527e119ac20b78.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.4 MiB = bundle.js 1.39 MiB main.f83620527e119ac20b78.hot-update.js 5.81 KiB
+cached modules 1.26 MiB [cached] 41 modules
+runtime modules 27.5 KiB 14 modules
+./node_modules/css-loader/dist/cjs.js!./src/App.css 3.29 KiB [built] [code generated]
+webpack 5.99.9 compiled successfully in 38 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.39 MiB
+  asset bundle.js 1.39 MiB [emitted] (name: main)
+  asset main.2d414dce14dd73527b8b.hot-update.js 2.63 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.2d414dce14dd73527b8b.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.39 MiB = bundle.js 1.39 MiB main.2d414dce14dd73527b8b.hot-update.js 2.63 KiB
+cached modules 1.26 MiB [cached] 41 modules
+runtime modules 27.5 KiB 14 modules
+./src/App.js 497 bytes [built] [code generated]
+
+ERROR in ./src/App.js 3:0-44
+Module not found: Error: Can't resolve './MainContainer' in '/home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src'
+resolve './MainContainer' in '/home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src'
+  using description file: /home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/package.json (relative path: ./src)
+    Field 'browser' doesn't contain a valid alias configuration
+    using description file: /home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/package.json (relative path: ./src/MainContainer)
+      no extension
+        Field 'browser' doesn't contain a valid alias configuration
+        /home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src/MainContainer doesn't exist
+      .js
+        Field 'browser' doesn't contain a valid alias configuration
+        /home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src/MainContainer.js doesn't exist
+      .jsx
+        Field 'browser' doesn't contain a valid alias configuration
+        /home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src/MainContainer.jsx doesn't exist
+      as directory
+        /home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src/MainContainer doesn't exist
+ @ ./src/index.js 5:0-24 11:32-35
+
+webpack 5.99.9 compiled with 1 error in 50 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.4 MiB
+  asset bundle.js 1.4 MiB [emitted] (name: main)
+  asset main.d27c17418670e167e04f.hot-update.js 8.07 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.d27c17418670e167e04f.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.4 MiB = bundle.js 1.4 MiB main.d27c17418670e167e04f.hot-update.js 8.07 KiB
+cached modules 1.26 MiB [cached] 41 modules
+runtime modules 27.5 KiB 14 modules
+javascript modules 2.29 KiB
+  ./src/App.js 497 bytes [code generated]
+  ./src/MainContainer.js 1.81 KiB [built] [code generated]
+
+ERROR in ./src/MainContainer.js 2:0-41
+Module not found: Error: Can't resolve './components/Navbar' in '/home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src'
+ @ ./src/App.js 3:0-44 12:32-45
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/MainContainer.js 3:0-49
+Module not found: Error: Can't resolve './components/RecipeList' in '/home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src'
+ @ ./src/App.js 3:0-44 12:32-45
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/MainContainer.js 4:0-53
+Module not found: Error: Can't resolve './components/RecipeDetail' in '/home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src'
+ @ ./src/App.js 3:0-44 12:32-45
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/MainContainer.js 5:0-55
+Module not found: Error: Can't resolve './components/CuisineFilter' in '/home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src'
+ @ ./src/App.js 3:0-44 12:32-45
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/MainContainer.js 6:0-47
+Module not found: Error: Can't resolve './components/SearchBar' in '/home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src'
+ @ ./src/App.js 3:0-44 12:32-45
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/MainContainer.js 7:0-37
+Module not found: Error: Can't resolve './components/Auth' in '/home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src'
+ @ ./src/App.js 3:0-44 12:32-45
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/MainContainer.js 8:0-49
+Module not found: Error: Can't resolve './components/RecipeForm' in '/home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src'
+ @ ./src/App.js 3:0-44 12:32-45
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/MainContainer.js 9:0-55
+Module not found: Error: Can't resolve './components/UserFavorites' in '/home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src'
+ @ ./src/App.js 3:0-44 12:32-45
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/MainContainer.js 10:0-57
+Module not found: Error: Can't resolve './components/CuisineManager' in '/home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src'
+ @ ./src/App.js 3:0-44 12:32-45
+ @ ./src/index.js 5:0-24 11:32-35
+
+9 errors have detailed information that is not shown.
+Use 'stats.errorDetails: true' resp. '--stats-error-details' to show it.
+
+webpack 5.99.9 compiled with 9 errors in 65 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.41 MiB
+  asset bundle.js 1.4 MiB [emitted] (name: main)
+  asset main.9251a6719cf11356be71.hot-update.js 9.14 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.9251a6719cf11356be71.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.41 MiB = bundle.js 1.4 MiB main.9251a6719cf11356be71.hot-update.js 9.14 KiB
+cached modules 1.26 MiB [cached] 42 modules
+runtime modules 27.5 KiB 14 modules
+javascript modules 3.31 KiB
+  ./src/MainContainer.js 1.81 KiB [code generated]
+  ./src/components/Navbar.js 1.5 KiB [built] [code generated]
+
+ERROR in ./src/MainContainer.js 3:0-49
+Module not found: Error: Can't resolve './components/RecipeList' in '/home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src'
+ @ ./src/App.js 3:0-44 12:32-45
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/MainContainer.js 4:0-53
+Module not found: Error: Can't resolve './components/RecipeDetail' in '/home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src'
+ @ ./src/App.js 3:0-44 12:32-45
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/MainContainer.js 5:0-55
+Module not found: Error: Can't resolve './components/CuisineFilter' in '/home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src'
+ @ ./src/App.js 3:0-44 12:32-45
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/MainContainer.js 6:0-47
+Module not found: Error: Can't resolve './components/SearchBar' in '/home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src'
+ @ ./src/App.js 3:0-44 12:32-45
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/MainContainer.js 7:0-37
+Module not found: Error: Can't resolve './components/Auth' in '/home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src'
+ @ ./src/App.js 3:0-44 12:32-45
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/MainContainer.js 8:0-49
+Module not found: Error: Can't resolve './components/RecipeForm' in '/home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src'
+ @ ./src/App.js 3:0-44 12:32-45
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/MainContainer.js 9:0-55
+Module not found: Error: Can't resolve './components/UserFavorites' in '/home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src'
+ @ ./src/App.js 3:0-44 12:32-45
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/MainContainer.js 10:0-57
+Module not found: Error: Can't resolve './components/CuisineManager' in '/home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src'
+ @ ./src/App.js 3:0-44 12:32-45
+ @ ./src/index.js 5:0-24 11:32-35
+
+8 errors have detailed information that is not shown.
+Use 'stats.errorDetails: true' resp. '--stats-error-details' to show it.
+
+webpack 5.99.9 compiled with 8 errors in 58 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.41 MiB
+  asset bundle.js 1.4 MiB [emitted] (name: main)
+  asset main.34d96eaf10db52e02284.hot-update.js 7.65 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.34d96eaf10db52e02284.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.41 MiB = bundle.js 1.4 MiB main.34d96eaf10db52e02284.hot-update.js 7.65 KiB
+cached modules 1.26 MiB [cached] 43 modules
+runtime modules 27.5 KiB 14 modules
+javascript modules 2.23 KiB
+  ./src/MainContainer.js 1.81 KiB [code generated]
+  ./src/components/RecipeList.js 436 bytes [built] [code generated]
+
+ERROR in ./src/MainContainer.js 4:0-53
+Module not found: Error: Can't resolve './components/RecipeDetail' in '/home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src'
+ @ ./src/App.js 3:0-44 12:32-45
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/MainContainer.js 5:0-55
+Module not found: Error: Can't resolve './components/CuisineFilter' in '/home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src'
+ @ ./src/App.js 3:0-44 12:32-45
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/MainContainer.js 6:0-47
+Module not found: Error: Can't resolve './components/SearchBar' in '/home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src'
+ @ ./src/App.js 3:0-44 12:32-45
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/MainContainer.js 7:0-37
+Module not found: Error: Can't resolve './components/Auth' in '/home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src'
+ @ ./src/App.js 3:0-44 12:32-45
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/MainContainer.js 8:0-49
+Module not found: Error: Can't resolve './components/RecipeForm' in '/home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src'
+ @ ./src/App.js 3:0-44 12:32-45
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/MainContainer.js 9:0-55
+Module not found: Error: Can't resolve './components/UserFavorites' in '/home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src'
+ @ ./src/App.js 3:0-44 12:32-45
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/MainContainer.js 10:0-57
+Module not found: Error: Can't resolve './components/CuisineManager' in '/home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src'
+ @ ./src/App.js 3:0-44 12:32-45
+ @ ./src/index.js 5:0-24 11:32-35
+
+7 errors have detailed information that is not shown.
+Use 'stats.errorDetails: true' resp. '--stats-error-details' to show it.
+
+webpack 5.99.9 compiled with 7 errors in 34 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.41 MiB
+  asset bundle.js 1.4 MiB [emitted] (name: main)
+  asset main.3db4281197d9c1a894b0.hot-update.js 7.59 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.3db4281197d9c1a894b0.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.41 MiB = bundle.js 1.4 MiB main.3db4281197d9c1a894b0.hot-update.js 7.59 KiB
+cached modules 1.27 MiB [cached] 44 modules
+runtime modules 27.5 KiB 14 modules
+javascript modules 2.24 KiB
+  ./src/MainContainer.js 1.81 KiB [code generated]
+  ./src/components/RecipeDetail.js 440 bytes [built] [code generated]
+
+ERROR in ./src/MainContainer.js 5:0-55
+Module not found: Error: Can't resolve './components/CuisineFilter' in '/home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src'
+ @ ./src/App.js 3:0-44 12:32-45
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/MainContainer.js 6:0-47
+Module not found: Error: Can't resolve './components/SearchBar' in '/home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src'
+ @ ./src/App.js 3:0-44 12:32-45
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/MainContainer.js 7:0-37
+Module not found: Error: Can't resolve './components/Auth' in '/home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src'
+ @ ./src/App.js 3:0-44 12:32-45
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/MainContainer.js 8:0-49
+Module not found: Error: Can't resolve './components/RecipeForm' in '/home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src'
+ @ ./src/App.js 3:0-44 12:32-45
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/MainContainer.js 9:0-55
+Module not found: Error: Can't resolve './components/UserFavorites' in '/home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src'
+ @ ./src/App.js 3:0-44 12:32-45
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/MainContainer.js 10:0-57
+Module not found: Error: Can't resolve './components/CuisineManager' in '/home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src'
+ @ ./src/App.js 3:0-44 12:32-45
+ @ ./src/index.js 5:0-24 11:32-35
+
+6 errors have detailed information that is not shown.
+Use 'stats.errorDetails: true' resp. '--stats-error-details' to show it.
+
+webpack 5.99.9 compiled with 6 errors in 31 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.41 MiB
+  asset bundle.js 1.4 MiB [emitted] (name: main)
+  asset main.b8ba3c27fc703d1ab5f8.hot-update.js 7.54 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.b8ba3c27fc703d1ab5f8.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.41 MiB = bundle.js 1.4 MiB main.b8ba3c27fc703d1ab5f8.hot-update.js 7.54 KiB
+cached modules 1.27 MiB [cached] 45 modules
+runtime modules 27.5 KiB 14 modules
+javascript modules 2.24 KiB
+  ./src/MainContainer.js 1.81 KiB [code generated]
+  ./src/components/CuisineFilter.js 447 bytes [built] [code generated]
+
+ERROR in ./src/MainContainer.js 6:0-47
+Module not found: Error: Can't resolve './components/SearchBar' in '/home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src'
+ @ ./src/App.js 3:0-44 12:32-45
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/MainContainer.js 7:0-37
+Module not found: Error: Can't resolve './components/Auth' in '/home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src'
+ @ ./src/App.js 3:0-44 12:32-45
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/MainContainer.js 8:0-49
+Module not found: Error: Can't resolve './components/RecipeForm' in '/home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src'
+ @ ./src/App.js 3:0-44 12:32-45
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/MainContainer.js 9:0-55
+Module not found: Error: Can't resolve './components/UserFavorites' in '/home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src'
+ @ ./src/App.js 3:0-44 12:32-45
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/MainContainer.js 10:0-57
+Module not found: Error: Can't resolve './components/CuisineManager' in '/home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src'
+ @ ./src/App.js 3:0-44 12:32-45
+ @ ./src/index.js 5:0-24 11:32-35
+
+5 errors have detailed information that is not shown.
+Use 'stats.errorDetails: true' resp. '--stats-error-details' to show it.
+
+webpack 5.99.9 compiled with 5 errors in 44 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.41 MiB
+  asset bundle.js 1.4 MiB [emitted] (name: main)
+  asset main.5828f70ae5a6b6ec39d9.hot-update.js 7.42 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.5828f70ae5a6b6ec39d9.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.41 MiB = bundle.js 1.4 MiB main.5828f70ae5a6b6ec39d9.hot-update.js 7.42 KiB
+cached modules 1.27 MiB [cached] 46 modules
+runtime modules 27.5 KiB 14 modules
+javascript modules 2.22 KiB
+  ./src/MainContainer.js 1.81 KiB [code generated]
+  ./src/components/SearchBar.js 427 bytes [built] [code generated]
+
+ERROR in ./src/MainContainer.js 7:0-37
+Module not found: Error: Can't resolve './components/Auth' in '/home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src'
+ @ ./src/App.js 3:0-44 12:32-45
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/MainContainer.js 8:0-49
+Module not found: Error: Can't resolve './components/RecipeForm' in '/home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src'
+ @ ./src/App.js 3:0-44 12:32-45
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/MainContainer.js 9:0-55
+Module not found: Error: Can't resolve './components/UserFavorites' in '/home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src'
+ @ ./src/App.js 3:0-44 12:32-45
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/MainContainer.js 10:0-57
+Module not found: Error: Can't resolve './components/CuisineManager' in '/home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src'
+ @ ./src/App.js 3:0-44 12:32-45
+ @ ./src/index.js 5:0-24 11:32-35
+
+4 errors have detailed information that is not shown.
+Use 'stats.errorDetails: true' resp. '--stats-error-details' to show it.
+
+webpack 5.99.9 compiled with 4 errors in 39 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.41 MiB
+  asset bundle.js 1.41 MiB [emitted] (name: main)
+  asset main.c8821192f25fe5e29cad.hot-update.js 7.28 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.c8821192f25fe5e29cad.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.41 MiB = bundle.js 1.41 MiB main.c8821192f25fe5e29cad.hot-update.js 7.28 KiB
+cached modules 1.27 MiB [cached] 47 modules
+runtime modules 27.5 KiB 14 modules
+javascript modules 2.19 KiB
+  ./src/MainContainer.js 1.81 KiB [code generated]
+  ./src/components/Auth.js 391 bytes [built] [code generated]
+
+ERROR in ./src/MainContainer.js 8:0-49
+Module not found: Error: Can't resolve './components/RecipeForm' in '/home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src'
+ @ ./src/App.js 3:0-44 12:32-45
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/MainContainer.js 9:0-55
+Module not found: Error: Can't resolve './components/UserFavorites' in '/home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src'
+ @ ./src/App.js 3:0-44 12:32-45
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/MainContainer.js 10:0-57
+Module not found: Error: Can't resolve './components/CuisineManager' in '/home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src'
+ @ ./src/App.js 3:0-44 12:32-45
+ @ ./src/index.js 5:0-24 11:32-35
+
+3 errors have detailed information that is not shown.
+Use 'stats.errorDetails: true' resp. '--stats-error-details' to show it.
+
+webpack 5.99.9 compiled with 3 errors in 41 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.41 MiB
+  asset bundle.js 1.41 MiB [emitted] (name: main)
+  asset main.bd72fe0009f962ca6498.hot-update.js 7.28 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.bd72fe0009f962ca6498.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.41 MiB = bundle.js 1.41 MiB main.bd72fe0009f962ca6498.hot-update.js 7.28 KiB
+cached modules 1.27 MiB [cached] 48 modules
+runtime modules 27.5 KiB 14 modules
+javascript modules 2.23 KiB
+  ./src/MainContainer.js 1.81 KiB [code generated]
+  ./src/components/RecipeForm.js 431 bytes [built] [code generated]
+
+ERROR in ./src/MainContainer.js 9:0-55
+Module not found: Error: Can't resolve './components/UserFavorites' in '/home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src'
+resolve './components/UserFavorites' in '/home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src'
+  using description file: /home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/package.json (relative path: ./src)
+    Field 'browser' doesn't contain a valid alias configuration
+    using description file: /home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/package.json (relative path: ./src/components/UserFavorites)
+      no extension
+        Field 'browser' doesn't contain a valid alias configuration
+        /home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src/components/UserFavorites doesn't exist
+      .js
+        Field 'browser' doesn't contain a valid alias configuration
+        /home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src/components/UserFavorites.js doesn't exist
+      .jsx
+        Field 'browser' doesn't contain a valid alias configuration
+        /home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src/components/UserFavorites.jsx doesn't exist
+      as directory
+        /home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src/components/UserFavorites doesn't exist
+ @ ./src/App.js 3:0-44 12:32-45
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/MainContainer.js 10:0-57
+Module not found: Error: Can't resolve './components/CuisineManager' in '/home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src'
+resolve './components/CuisineManager' in '/home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src'
+  using description file: /home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/package.json (relative path: ./src)
+    Field 'browser' doesn't contain a valid alias configuration
+    using description file: /home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/package.json (relative path: ./src/components/CuisineManager)
+      no extension
+        Field 'browser' doesn't contain a valid alias configuration
+        /home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src/components/CuisineManager doesn't exist
+      .js
+        Field 'browser' doesn't contain a valid alias configuration
+        /home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src/components/CuisineManager.js doesn't exist
+      .jsx
+        Field 'browser' doesn't contain a valid alias configuration
+        /home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src/components/CuisineManager.jsx doesn't exist
+      as directory
+        /home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src/components/CuisineManager doesn't exist
+ @ ./src/App.js 3:0-44 12:32-45
+ @ ./src/index.js 5:0-24 11:32-35
+
+webpack 5.99.9 compiled with 2 errors in 35 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.42 MiB
+  asset bundle.js 1.41 MiB [emitted] (name: main)
+  asset main.3b52a0c8b8b1b2b3e801.hot-update.js 7.24 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.3b52a0c8b8b1b2b3e801.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.42 MiB = bundle.js 1.41 MiB main.3b52a0c8b8b1b2b3e801.hot-update.js 7.24 KiB
+cached modules 1.27 MiB [cached] 49 modules
+runtime modules 27.5 KiB 14 modules
+javascript modules 2.24 KiB
+  ./src/MainContainer.js 1.81 KiB [code generated]
+  ./src/components/UserFavorites.js 439 bytes [built] [code generated]
+
+ERROR in ./src/MainContainer.js 10:0-57
+Module not found: Error: Can't resolve './components/CuisineManager' in '/home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src'
+resolve './components/CuisineManager' in '/home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src'
+  using description file: /home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/package.json (relative path: ./src)
+    Field 'browser' doesn't contain a valid alias configuration
+    using description file: /home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/package.json (relative path: ./src/components/CuisineManager)
+      no extension
+        Field 'browser' doesn't contain a valid alias configuration
+        /home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src/components/CuisineManager doesn't exist
+      .js
+        Field 'browser' doesn't contain a valid alias configuration
+        /home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src/components/CuisineManager.js doesn't exist
+      .jsx
+        Field 'browser' doesn't contain a valid alias configuration
+        /home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src/components/CuisineManager.jsx doesn't exist
+      as directory
+        /home/kavia/workspace/code-generation/globalcuisine-hub-65779-6126a72c/globalcuisine_hub/src/components/CuisineManager doesn't exist
+ @ ./src/App.js 3:0-44 12:32-45
+ @ ./src/index.js 5:0-24 11:32-35
+
+webpack 5.99.9 compiled with 1 error in 31 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.42 MiB
+  asset bundle.js 1.41 MiB [emitted] (name: main)
+  asset main.e1c7eaab517f66e65238.hot-update.js 7.19 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.e1c7eaab517f66e65238.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.42 MiB = bundle.js 1.41 MiB main.e1c7eaab517f66e65238.hot-update.js 7.19 KiB
+cached modules 1.27 MiB [cached] 50 modules
+runtime modules 27.5 KiB 14 modules
+javascript modules 2.25 KiB
+  ./src/MainContainer.js 1.81 KiB [code generated]
+  ./src/components/CuisineManager.js 450 bytes [built] [code generated]
+webpack 5.99.9 compiled successfully in 31 ms
