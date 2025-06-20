@@ -49,20 +49,39 @@ const SAMPLE_RECIPES = [
 function GlobalCuisineHub() {
   // State to hold value of search input
   const [searchTerm, setSearchTerm] = useState("");
+  // State to hold current cuisine filter, 'All' means no filter
+  const [selectedCuisine, setSelectedCuisine] = useState("All");
+
+  // Extract unique cuisines from sample data for filter list
+  const cuisineOptions = useMemo(() => {
+    const cuisines = SAMPLE_RECIPES.map(r => r.cuisine);
+    // Keep alphabetical and unique
+    return ["All", ...Array.from(new Set(cuisines)).sort()];
+  }, []);
 
   // Filter recipes based on search term (case-insensitive, on name, cuisine, or ingredients)
+  // and selected cuisine.
   const filteredRecipes = useMemo(() => {
     const term = searchTerm.trim().toLowerCase();
-    if (!term) return SAMPLE_RECIPES;
-    return SAMPLE_RECIPES.filter(recipe => {
-      // Check name, cuisine, and ingredient matches
+    let filtered = SAMPLE_RECIPES;
+
+    // Filter by cuisine if non-default selected
+    if (selectedCuisine && selectedCuisine !== "All") {
+      filtered = filtered.filter(
+        recipe => recipe.cuisine === selectedCuisine
+      );
+    }
+
+    // Then filter by search term
+    if (!term) return filtered;
+    return filtered.filter(recipe => {
       return (
         recipe.name.toLowerCase().includes(term) ||
         recipe.cuisine.toLowerCase().includes(term) ||
         recipe.ingredients.some(ing => ing.toLowerCase().includes(term))
       );
     });
-  }, [searchTerm]);
+  }, [searchTerm, selectedCuisine]);
 
   return (
     <div className="gch-app light-theme">
@@ -84,8 +103,8 @@ function GlobalCuisineHub() {
 
       {/* Main content area */}
       <main className="gch-main">
-        {/* Search Bar */}
-        <section className="gch-searchbar-section">
+        {/* Search & Filter Bar */}
+        <section className="gch-searchbar-section" style={{ gap: "18px" }}>
           <input
             type="text"
             placeholder="Search for recipes, cuisines, or ingredients…"
@@ -94,9 +113,28 @@ function GlobalCuisineHub() {
             value={searchTerm}
             onChange={e => setSearchTerm(e.target.value)}
             autoFocus
-            // No longer disabled: search is now functional
           />
-          {/* Future: <button className="gch-search-btn">Search</button> */}
+          {/* Cuisine filter dropdown */}
+          <select
+            aria-label="Filter by cuisine"
+            value={selectedCuisine}
+            onChange={e => setSelectedCuisine(e.target.value)}
+            style={{
+              marginLeft: 10,
+              padding: "10px 15px",
+              borderRadius: "8px",
+              border: "2px solid var(--secondary)",
+              background: "#f3fff2",
+              fontSize: "1rem",
+              color: "var(--text-color)",
+              fontWeight: 500,
+              minWidth: "125px"
+            }}
+          >
+            {cuisineOptions.map(cuisine => (
+              <option value={cuisine} key={cuisine}>{cuisine}</option>
+            ))}
+          </select>
         </section>
 
         {/* Recipe Area */}
@@ -105,7 +143,7 @@ function GlobalCuisineHub() {
             <div className="gch-recipe-area-placeholder">
               <h2>No Recipes Found</h2>
               <p>
-                We couldn&apos;t find any recipes matching your search.
+                We couldn&apos;t find any recipes matching your search and filter.
               </p>
             </div>
           ) : (
