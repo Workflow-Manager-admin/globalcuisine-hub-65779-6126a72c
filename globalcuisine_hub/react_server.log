@@ -11,26 +11,36 @@ asset bundle.js 1.4 MiB [emitted] (name: main)
 asset index.html 1.98 KiB [emitted]
 runtime modules 27.5 KiB 14 modules
 modules by path ./node_modules/ 1.24 MiB 31 modules
-modules by path ./src/ 18.5 KiB
+modules by path ./src/ 20 KiB
   modules by path ./src/*.css 10.4 KiB 4 modules
   modules by path ./src/*.js 915 bytes
     ./src/index.js 530 bytes [built] [code generated]
     ./src/App.js 385 bytes [built] [code generated]
-  ./src/containers/GlobalCuisineHub.js 7.26 KiB [built] [code generated]
+  ./src/containers/GlobalCuisineHub.js 8.69 KiB [built] [code generated]
 modules by path ./.ve/ 15.1 KiB
   modules by path ./.ve/*.js 10.6 KiB 2 modules
   modules by path ./.ve/*.css 2.93 KiB
     ./.ve/EditorOverlay.css 2.25 KiB [built] [code generated]
     ./node_modules/css-loader/dist/cjs.js!./.ve/EditorOverlay.css 697 bytes [built] [code generated]
   ./.ve/EditorOverlay.jsx 1.58 KiB [built] [code generated]
-webpack 5.99.9 compiled successfully in 1229 ms
+webpack 5.99.9 compiled successfully in 1258 ms
 assets by status 1.98 KiB [cached] 1 asset
-assets by path *.js 1.42 MiB
-  asset bundle.js 1.4 MiB [emitted] (name: main)
-  asset main.28508138a4b9b71e25f3.hot-update.js 12.4 KiB [emitted] [immutable] [hmr] (name: main)
-asset main.28508138a4b9b71e25f3.hot-update.json 28 bytes [emitted] [immutable] [hmr]
-Entrypoint main 1.42 MiB = bundle.js 1.4 MiB main.28508138a4b9b71e25f3.hot-update.js 12.4 KiB
+assets by path *.js 1.43 MiB
+  asset bundle.js 1.41 MiB [emitted] (name: main)
+  asset main.003377fbdeb16f34cee0.hot-update.js 20 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.003377fbdeb16f34cee0.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.43 MiB = bundle.js 1.41 MiB main.003377fbdeb16f34cee0.hot-update.js 20 KiB
 cached modules 1.27 MiB [cached] 42 modules
 runtime modules 27.5 KiB 14 modules
-./src/containers/GlobalCuisineHub.js 8.69 KiB [built] [code generated]
-webpack 5.99.9 compiled successfully in 107 ms
+./src/containers/GlobalCuisineHub.js 15 KiB [built] [code generated]
+webpack 5.99.9 compiled successfully in 140 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.44 MiB
+  asset bundle.js 1.42 MiB [emitted] (name: main)
+  asset main.33983e49ddcbe1b0c4be.hot-update.js 27 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.33983e49ddcbe1b0c4be.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.44 MiB = bundle.js 1.42 MiB main.33983e49ddcbe1b0c4be.hot-update.js 27 KiB
+cached modules 1.27 MiB [cached] 42 modules
+runtime modules 27.5 KiB 14 modules
+./src/containers/GlobalCuisineHub.js 20.8 KiB [built] [code generated]
+webpack 5.99.9 compiled successfully in 93 ms
