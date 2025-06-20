@@ -1,6 +1,108 @@
 import React, { useState, useMemo } from "react";
 import "../App.css";
 
+// Spinner component for loading state
+function Spinner({ size = 38, color = "#FF6347" }) {
+  return (
+    <div
+      role="status"
+      aria-label="Loading"
+      style={{
+        display: "inline-block",
+        width: size,
+        height: size,
+        verticalAlign: "middle",
+      }}
+    >
+      <svg
+        width={size}
+        height={size}
+        viewBox="0 0 38 38"
+        style={{ display: "block" }}
+        xmlns="http://www.w3.org/2000/svg"
+        stroke={color}
+      >
+        <g fill="none" fillRule="evenodd">
+          <g transform="translate(1 1)" strokeWidth="4">
+            <circle stroke="#FFC107" strokeOpacity="0.3" cx="18" cy="18" r="18"/>
+            <path d="M36 18c0-9.94-8.06-18-18-18">
+              <animateTransform
+                attributeName="transform"
+                type="rotate"
+                from="0 18 18"
+                to="360 18 18"
+                dur="1s"
+                repeatCount="indefinite"
+              />
+            </path>
+          </g>
+        </g>
+      </svg>
+    </div>
+  );
+}
+
+// Accessible Card
+function GchRecipeCard({ recipe }) {
+  return (
+    <article
+      className="gch-recipe-card"
+      tabIndex={0}
+      aria-labelledby={`title-${recipe.id}`}
+      style={{
+        background: "#fffbe9",
+        border: "2px solid #FFC107",
+        borderRadius: "20px",
+        boxShadow: "0 4px 18px 0 rgba(250, 197, 33, 0.11), 0 1.5px 4px 0 rgba(130,50,50,0.04)",
+        width: "290px",
+        minHeight: "187px",
+        padding: "20px 20px 22px 20px",
+        margin: "0",
+        marginBottom: "16px",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "stretch",
+        transition: "transform 0.14s, box-shadow 0.18s",
+        outline: "none"
+      }}
+      onFocus={e => (e.currentTarget.style.boxShadow = "0 6px 32px 0 rgba(250, 197, 33, 0.15), 0 1.5px 4px 0 rgba(130,50,50,0.09)")}
+      onBlur={e => (e.currentTarget.style.boxShadow = "0 4px 18px 0 rgba(250, 197, 33, 0.11), 0 1.5px 4px 0 rgba(130,50,50,0.04)")}
+      tabIndex="0"
+    >
+      <header style={{ display: "flex", alignItems: "center", marginBottom: 10 }}>
+        <div style={{ fontSize: "2rem", marginRight: "12px" }} role="img" aria-label="dish">🍴</div>
+        <h3 id={`title-${recipe.id}`} style={{ margin: 0, color: "#FF6347", fontWeight: 700, fontSize: "1.13rem", flex: 1 }}>
+          {recipe.name}
+        </h3>
+      </header>
+      <div style={{
+        fontWeight: 500,
+        fontSize: "1.01rem",
+        color: "#444",
+        marginBottom: "7px",
+        display: "flex",
+        alignItems: "center",
+        gap: 7
+      }}>
+        <span role="img" aria-label="cuisine">🍽️</span>
+        <span style={{ fontWeight: 600 }}>{recipe.cuisine}</span>
+      </div>
+      <div style={{ fontSize: "0.99rem", color: "#555" }}>
+        <span style={{ fontWeight: 500 }}>Ingredients:</span>
+        <span style={{ color: "#252525", marginLeft: 6 }}>{recipe.ingredients.join(', ')}</span>
+      </div>
+      <div style={{
+        fontSize: "0.99rem",
+        color: "#232323",
+        marginTop: "10px",
+        flex: 1,
+        lineHeight: 1.48
+      }}>
+        {recipe.description}
+      </div>
+    </article>
+  );
+}
 // PUBLIC_INTERFACE
 /**
  * AuthModal component for Login/Register.
@@ -233,7 +335,21 @@ function GlobalCuisineHub() {
     return ["All", ...Array.from(new Set(cuisines)).sort()];
   }, []);
 
-  // Filter recipes - NO change
+  // Simulate loading (for demonstration) on login
+  const [loading, setLoading] = useState(false);
+  React.useEffect(() => {
+    if (showAuth && !user) setLoading(false); // on modal show, reset loading
+  }, [showAuth, user]);
+  // After login/register: simulate a short "loading"
+  React.useEffect(() => {
+    if (user && !loading) {
+      setLoading(true);
+      const t = setTimeout(() => setLoading(false), 500);
+      return () => clearTimeout(t);
+    }
+  }, [user]); // run on (user) change
+
+  // Filter recipes - NO change to filtering logic
   const filteredRecipes = useMemo(() => {
     const term = searchTerm.trim().toLowerCase();
     let filtered = SAMPLE_RECIPES;
@@ -252,39 +368,89 @@ function GlobalCuisineHub() {
   return (
     <div className="gch-app light-theme">
       {/* NAVIGATION BAR */}
-      <nav className="gch-navbar">
+      <nav className="gch-navbar" role="navigation" aria-label="Main Navigation">
         <div className="gch-navbar-content">
-          <div className="gch-logo">
+          <a href="/" className="gch-logo" tabIndex={0} aria-label="GlobalCuisineHub Home" style={{ outline: "none" }}>
             <span className="gch-logo-symbol" role="img" aria-label="globe">
               🌍
             </span>
-            GlobalCuisine Hub
-          </div>
+            <span style={{ textShadow: "0 1.5px 7px rgba(255,255,255,0.14)" }}>GlobalCuisine Hub</span>
+          </a>
           {/* Nav/user actions */}
           <div className="gch-navbar-links">
             {user ? (
               <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
-                <span style={{ fontWeight: "500", letterSpacing: 0.2, background: "#FFE5B4", color: "#D2691E", borderRadius: 7, padding: "4px 12px", marginRight: 2 }}>
-                  <span role="img" aria-label="user" style={{ marginRight: 3 }}>👤</span>
+                <span
+                  style={{
+                    fontWeight: "500",
+                    letterSpacing: 0.2,
+                    background: "#FFE5B4",
+                    color: "#D2691E",
+                    borderRadius: 7,
+                    padding: "5px 14px",
+                    marginRight: 2,
+                    boxShadow: "0 1px 5px 0 rgba(255,190,80,0.08)"
+                  }}
+                  aria-label={`Logged in as ${user.username}`}
+                >
+                  <span role="img" aria-label="user" style={{ marginRight: 3 }}>
+                    👤
+                  </span>
                   {user.username}
                 </span>
-                <button className="btn" style={{ padding: "7px 15px", fontWeight: "500", fontSize: "0.99rem", background: "#FF6347", borderRadius: 6 }}
+                <button
+                  className="btn"
+                  style={{
+                    padding: "7px 18px",
+                    fontWeight: "500",
+                    fontSize: "1.04rem",
+                    background: "#FF6347",
+                    borderRadius: 7,
+                    boxShadow: "0 2px 6px 0 rgba(255,99,71,0.05)",
+                  }}
                   onClick={handleLogout}
-                >Logout</button>
+                  aria-label="Logout"
+                >
+                  Logout
+                </button>
               </div>
             ) : (
               <>
                 <a
                   href="#login"
-                  style={{ fontWeight: 600, fontSize: "1.05rem" }}
+                  style={{
+                    fontWeight: 600,
+                    fontSize: "1.06rem",
+                    borderRadius: 7,
+                    padding: "4px 14px",
+                    color: "#fff",
+                    outline: "none",
+                  }}
+                  tabIndex={0}
                   onClick={e => { e.preventDefault(); setShowAuth(true); setAuthMode("login"); setAuthError(""); }}
-                >Login</a>
-                <span style={{ color: "#fff", fontSize: 17, padding: "0 7px" }}>|</span>
+                  aria-label="Login"
+                >
+                  Login
+                </a>
+                <span style={{ color: "#fff", fontSize: 17, padding: "0 7px" }} aria-hidden="true">
+                  |
+                </span>
                 <a
                   href="#register"
-                  style={{ fontWeight: 600, fontSize: "1.05rem" }}
+                  style={{
+                    fontWeight: 600,
+                    fontSize: "1.06rem",
+                    borderRadius: 7,
+                    padding: "4px 14px",
+                    color: "#fff",
+                    outline: "none",
+                  }}
+                  tabIndex={0}
                   onClick={e => { e.preventDefault(); setShowAuth(true); setAuthMode("register"); setAuthError(""); }}
-                >Register</a>
+                  aria-label="Register"
+                >
+                  Register
+                </a>
               </>
             )}
           </div>
@@ -301,7 +467,7 @@ function GlobalCuisineHub() {
       />
 
       {/* Main content area */}
-      <main className="gch-main">
+      <main className="gch-main" tabIndex={-1}>
         {/* Search & Filter Bar */}
         <section className="gch-searchbar-section" style={{ gap: "18px" }}>
           <input
@@ -312,8 +478,8 @@ function GlobalCuisineHub() {
             value={searchTerm}
             onChange={e => setSearchTerm(e.target.value)}
             autoFocus
-            disabled={!user}
-            style={user ? {} : { opacity: 0.85, background: "#fff3cd" }}
+            disabled={!user || loading}
+            style={user && !loading ? {} : { opacity: 0.72, background: "#fff3cd", pointerEvents: "none" }}
           />
           {/* Cuisine filter dropdown */}
           <select
@@ -331,10 +497,12 @@ function GlobalCuisineHub() {
               fontWeight: 500,
               minWidth: "125px"
             }}
-            disabled={!user}
+            disabled={!user || loading}
           >
             {cuisineOptions.map(cuisine => (
-              <option value={cuisine} key={cuisine}>{cuisine}</option>
+              <option value={cuisine} key={cuisine}>
+                {cuisine}
+              </option>
             ))}
           </select>
         </section>
@@ -343,50 +511,66 @@ function GlobalCuisineHub() {
         <section className="gch-recipe-area">
           {!user ? (
             <div className="gch-recipe-area-placeholder" style={{ padding: 56 }}>
-              <h2>Welcome to GlobalCuisineHub!</h2>
+              <h2 tabIndex={0}>Welcome to GlobalCuisineHub!</h2>
               <p>
                 Please login or register to browse delicious recipes from around the world.
               </p>
               <button
                 className="btn"
-                style={{ marginTop: 18, fontSize: "1.08rem", fontWeight: 600, padding: "11px 38px", background: "#FF6347", borderRadius: 7 }}
+                style={{ marginTop: 18, fontSize: "1.09rem", fontWeight: 600, padding: "12px 38px", background: "#FF6347", borderRadius: 7 }}
                 onClick={() => { setShowAuth(true); setAuthMode("login"); setAuthError(""); }}
-              >Login Now</button>
+                aria-label="Login now"
+              >
+                Login Now
+              </button>
             </div>
-          ) : (filteredRecipes.length === 0 ? (
-            <div className="gch-recipe-area-placeholder">
+          ) : loading ? (
+            <div className="gch-recipe-area-placeholder" aria-busy="true" aria-live="polite" style={{ padding: 50, minHeight: 185 }}>
+              <Spinner />
+              <div style={{ color: "#888", marginTop: 22, fontSize: "1.09rem", fontWeight: 500 }}>
+                Loading your recipes...
+              </div>
+            </div>
+          ) : filteredRecipes.length === 0 ? (
+            <div className="gch-recipe-area-placeholder" aria-live="polite" style={{ minHeight: 150 }}>
               <h2>No Recipes Found</h2>
               <p>
                 We couldn&apos;t find any recipes matching your search and filter.
               </p>
+              <button
+                className="btn"
+                style={{
+                  marginTop: 16,
+                  padding: "9px 24px",
+                  background: "#4CAF50",
+                  color: "#fff",
+                  borderRadius: 6,
+                  fontWeight: 500,
+                  fontSize: "1.04rem"
+                }}
+                onClick={() => { setSearchTerm(""); setSelectedCuisine("All"); }}
+                aria-label="Show all recipes"
+              >
+                Show All
+              </button>
             </div>
           ) : (
-            <div style={{ width: '100%', display: 'flex', flexWrap: 'wrap', gap: '1.2rem', justifyContent: 'center', padding: '24px 0' }}>
+            <div
+              style={{
+                width: "100%",
+                display: "flex",
+                flexWrap: "wrap",
+                gap: "2.1vw",
+                justifyContent: "center",
+                padding: "28px 0"
+              }}
+              aria-live="polite"
+            >
               {filteredRecipes.map(recipe => (
-                <div key={recipe.id} style={{
-                  background: '#fffbe9',
-                  border: '2px solid #FFC107',
-                  borderRadius: '12px',
-                  boxShadow: '0 2px 8px 0 rgba(250, 197, 33, 0.08)',
-                  width: '275px',
-                  padding: '16px 20px',
-                  margin: '0',
-                  marginBottom: '12px',
-                  display: 'flex', flexDirection: 'column',
-                  alignItems: 'flex-start'
-                }}>
-                  <h3 style={{ margin: '0 0 6px 0', color: '#FF6347', fontWeight: 600 }}>
-                    {recipe.name}
-                  </h3>
-                  <div style={{ fontWeight: 500, fontSize: '1.01rem', color: '#444', marginBottom: '8px' }}>
-                    <span role="img" aria-label="cuisine">🍽️</span> {recipe.cuisine}
-                  </div>
-                  <div style={{ fontSize: '0.98rem', color: '#555' }}>Ingredients: <span style={{ color: '#222' }}>{recipe.ingredients.join(', ')}</span></div>
-                  <div style={{ fontSize: '0.98rem', color: '#222', marginTop: '7px' }}>{recipe.description}</div>
-                </div>
+                <GchRecipeCard recipe={recipe} key={recipe.id} />
               ))}
             </div>
-          ))}
+          )}
         </section>
       </main>
     </div>
