@@ -11,7 +11,11 @@ const initialState = {
   // Boolean for auth status
   isAuthenticated: false,
   // Array of favorited recipe IDs (if not in user object)
-  favorites: []
+  favorites: [],
+  // Currently selected cuisine filter (or null for ALL)
+  selectedCuisine: null,
+  // Current search query for filtering
+  searchQuery: ""
 };
 
 // Reducer function to handle all global state mutations
@@ -96,6 +100,12 @@ function appReducer(state, action) {
             }
           : state.user
       };
+
+    // -- UI FILTERS --
+    case 'SET_SELECTED_CUISINE':
+      return { ...state, selectedCuisine: action.payload };
+    case 'SET_SEARCH_QUERY':
+      return { ...state, searchQuery: action.payload };
 
     default:
       return state;

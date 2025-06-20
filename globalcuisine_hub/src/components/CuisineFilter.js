@@ -1,11 +1,40 @@
 import React from "react";
+import { useAppContext } from "../context/AppContext";
 
 // PUBLIC_INTERFACE
 function CuisineFilter() {
-  /** Stub for CuisineFilter: UI for filtering recipes by cuisine type. */
+  /**
+   * CuisineFilter: shows list of cuisine filters. Updates selectedCuisine filter in context.
+   */
+  const { state, dispatch } = useAppContext();
+  const cuisines = state.cuisines || [];
+  const selected = state.selectedCuisine;
+
+  if (!cuisines.length) return null;
+
   return (
-    <section className="stub" id="cuisinefilter-stub">
-      CuisineFilter Component (select cuisine)
+    <section style={{marginBottom:20}}>
+      <label style={{fontWeight:"bold", marginRight:10}}>Filter by cuisine:</label>
+      <button
+        className="btn"
+        style={{marginRight:8, background: !selected ? "var(--accent)" : ""}}
+        onClick={() => dispatch({ type: "SET_SELECTED_CUISINE", payload: null })}
+      >
+        All
+      </button>
+      {cuisines.map(c => (
+        <button
+          key={c}
+          className="btn"
+          style={{
+            marginRight:8,
+            background: selected===c ? "var(--secondary)" : ""
+          }}
+          onClick={() => dispatch({ type: "SET_SELECTED_CUISINE", payload: c })}
+        >
+          {c}
+        </button>
+      ))}
     </section>
   );
 }
