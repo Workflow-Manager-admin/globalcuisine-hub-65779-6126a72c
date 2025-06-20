@@ -17,6 +17,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
  * Example mock data for initial demo state (recipes and cuisines).
  */
 const MOCK_RECIPES = [
+  // Japanese
   {
     id: 1,
     name: "Sushi",
@@ -25,6 +26,7 @@ const MOCK_RECIPES = [
     steps: ["Prepare rice", "Add fish", "Roll", "Slice"],
     description: "Rice and fish rolls, a Japanese classic."
   },
+  // Italian
   {
     id: 2,
     name: "Pizza Margherita",
@@ -33,6 +35,7 @@ const MOCK_RECIPES = [
     steps: ["Shape dough", "Add sauce", "Add cheese", "Bake", "Top with basil"],
     description: "Classic Italian pizza with tomato, mozzarella, and basil."
   },
+  // Indian
   {
     id: 3,
     name: "Chicken Tikka Masala",
@@ -41,6 +44,7 @@ const MOCK_RECIPES = [
     steps: ["Marinate chicken", "Cook sauce", "Combine", "Simmer"],
     description: "Grilled chicken in creamy spiced tomato sauce."
   },
+  // Mexican
   {
     id: 4,
     name: "Tacos",
@@ -48,13 +52,144 @@ const MOCK_RECIPES = [
     ingredients: ["Tortillas", "Beef", "Lettuce", "Cheese", "Salsa"],
     steps: ["Prepare filling", "Warm tortillas", "Assemble tacos"],
     description: "Folded tortillas with various savory fillings."
+  },
+  // French
+  {
+    id: 5,
+    name: "Coq au Vin",
+    cuisine: "French",
+    ingredients: ["Chicken", "Red wine", "Bacon", "Mushrooms", "Onions", "Carrots"],
+    steps: [
+      "Marinate chicken in wine overnight",
+      "Brown bacon & chicken",
+      "Add vegetables and cook",
+      "Simmer until tender"
+    ],
+    description: "Classic French stew of chicken braised with wine, bacon, and vegetables."
+  },
+  // Thai
+  {
+    id: 6,
+    name: "Pad Thai",
+    cuisine: "Thai",
+    ingredients: ["Rice noodles", "Egg", "Shrimp", "Tofu", "Bean sprouts", "Peanuts", "Tamarind sauce"],
+    steps: [
+      "Soak noodles",
+      "Stir-fry protein and egg",
+      "Add noodles and sauce",
+      "Garnish with sprouts & peanuts"
+    ],
+    description: "Popular stir-fried noodle dish with sweet, sour, and savory flavors."
+  },
+  // American
+  {
+    id: 7,
+    name: "Classic Burger",
+    cuisine: "American",
+    ingredients: ["Beef patty", "Burger buns", "Cheddar", "Lettuce", "Tomato", "Onion", "Pickles", "Ketchup"],
+    steps: [
+      "Form and season patties",
+      "Grill to preference",
+      "Assemble on buns with toppings"
+    ],
+    description: "Iconic grilled beef burgers stacked with fresh toppings."
+  },
+  // Chinese
+  {
+    id: 8,
+    name: "Kung Pao Chicken",
+    cuisine: "Chinese",
+    ingredients: ["Chicken", "Peanuts", "Dried chili", "Bell peppers", "Soy sauce", "Ginger", "Garlic"],
+    steps: [
+      "Marinate and stir-fry chicken",
+      "Add veggies and peanuts",
+      "Stir in sauce and cook through"
+    ],
+    description: "Spicy stir-fry with chicken, peanuts, and vegetables."
+  },
+  // Middle Eastern
+  {
+    id: 9,
+    name: "Hummus",
+    cuisine: "Middle Eastern",
+    ingredients: ["Chickpeas", "Tahini", "Olive oil", "Garlic", "Lemon juice", "Salt"],
+    steps: [
+      "Blend chickpeas, tahini, and garlic",
+      "Add lemon juice and olive oil",
+      "Season to taste"
+    ],
+    description: "Creamy dip made from blended chickpeas, popular throughout the Middle East."
+  },
+  // Greek
+  {
+    id: 10,
+    name: "Greek Salad",
+    cuisine: "Greek",
+    ingredients: ["Tomatoes", "Cucumber", "Red onion", "Kalamata olives", "Feta cheese", "Oregano", "Olive oil"],
+    steps: [
+      "Chop vegetables",
+      "Add olives and feta",
+      "Drizzle with olive oil",
+      "Sprinkle with oregano and toss"
+    ],
+    description: "Fresh salad with cheese, olives, and crisp veggies."
+  },
+  // Ethiopian
+  {
+    id: 11,
+    name: "Doro Wat",
+    cuisine: "Ethiopian",
+    ingredients: ["Chicken", "Berbere spice", "Onions", "Garlic", "Ginger", "Butter", "Eggs"],
+    steps: [
+      "Caramelize onions with spices",
+      "Add chicken and simmer",
+      "Add hard-boiled eggs",
+      "Serve with injera"
+    ],
+    description: "Spicy Ethiopian chicken stew rich in flavor, usually served with injera bread."
+  },
+  // Korean
+  {
+    id: 12,
+    name: "Bibimbap",
+    cuisine: "Korean",
+    ingredients: ["Rice", "Mixed vegetables", "Egg", "Beef", "Gochujang", "Sesame oil"],
+    steps: [
+      "Prepare rice and vegetables",
+      "Cook beef",
+      "Fry egg",
+      "Assemble bowl and top with gochujang"
+    ],
+    description: "Colorful bowl of rice topped with vegetables, meat, and chili paste."
+  },
+  // Spanish
+  {
+    id: 13,
+    name: "Paella Valenciana",
+    cuisine: "Spanish",
+    ingredients: ["Short-grain rice", "Chicken", "Rabbit", "Green beans", "Tomato", "Saffron", "Olive oil"],
+    steps: [
+      "Brown meats and veggies",
+      "Stir in rice and saffron",
+      "Simmer without stirring until done"
+    ],
+    description: "Famous Spanish rice dish infused with saffron and mixed meats."
   }
 ];
 const MOCK_CUISINES = [
   "Japanese",
   "Italian",
   "Indian",
-  "Mexican"
+  "Mexican",
+  "French",
+  "Thai",
+  "American",
+  "Chinese",
+  "Middle Eastern",
+  "Greek",
+  "Ethiopian",
+  "Korean",
+  "Spanish"
 ];
 
 // PUBLIC_INTERFACE

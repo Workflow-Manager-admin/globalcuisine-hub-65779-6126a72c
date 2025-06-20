@@ -36,3 +36,13 @@ javascript modules 56.1 KiB
   ./src/index.js 718 bytes [built] [code generated]
   ./node_modules/react-router-dom/dist/index.js 55.4 KiB [code generated]
 webpack 5.99.9 compiled successfully in 117 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.83 MiB
+  asset bundle.js 1.81 MiB [emitted] (name: main)
+  asset main.d4b189e7226e329f37fe.hot-update.js 14.4 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.d4b189e7226e329f37fe.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.83 MiB = bundle.js 1.81 MiB main.d4b189e7226e329f37fe.hot-update.js 14.4 KiB
+cached modules 1.62 MiB [cached] 55 modules
+runtime modules 28.7 KiB 15 modules
+./src/MainContainer.js 8.5 KiB [built] [code generated]
+webpack 5.99.9 compiled successfully in 100 ms
