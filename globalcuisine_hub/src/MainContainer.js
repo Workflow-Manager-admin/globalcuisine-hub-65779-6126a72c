@@ -23,7 +23,15 @@ const MOCK_RECIPES = [
     name: "Sushi",
     cuisine: "Japanese",
     ingredients: ["Sushi rice", "Nori", "Fish", "Soy sauce"],
-    steps: ["Prepare rice", "Add fish", "Roll", "Slice"],
+    steps: [
+      "Prepare the sushi rice by seasoning with vinegar, sugar, and salt.",
+      "Lay a sheet of nori on a bamboo rolling mat.",
+      "Spread rice evenly on the nori, leaving a 1-inch border at the top.",
+      "Add thin strips of fish and other fillings.",
+      "Roll tightly using the bamboo mat.",
+      "Slice the rolled sushi into bite-sized pieces.",
+      "Serve with soy sauce."
+    ],
     description: "Rice and fish rolls, a Japanese classic."
   },
   // Italian
@@ -32,7 +40,14 @@ const MOCK_RECIPES = [
     name: "Pizza Margherita",
     cuisine: "Italian",
     ingredients: ["Pizza dough", "Tomato sauce", "Mozzarella", "Basil"],
-    steps: ["Shape dough", "Add sauce", "Add cheese", "Bake", "Top with basil"],
+    steps: [
+      "Preheat oven to its highest temperature (450–500°F/230–260°C).",
+      "Shape the pizza dough into a circle on a floured surface.",
+      "Spread tomato sauce evenly over the dough.",
+      "Add slices of mozzarella cheese.",
+      "Bake until the crust is golden and cheese melted, about 10 minutes.",
+      "Top with fresh basil leaves after baking. Slice and enjoy!"
+    ],
     description: "Classic Italian pizza with tomato, mozzarella, and basil."
   },
   // Indian
@@ -41,7 +56,13 @@ const MOCK_RECIPES = [
     name: "Chicken Tikka Masala",
     cuisine: "Indian",
     ingredients: ["Chicken", "Yogurt", "Spices", "Tomato"],
-    steps: ["Marinate chicken", "Cook sauce", "Combine", "Simmer"],
+    steps: [
+      "Mix chicken with yogurt and spices; marinate for at least 1 hour.",
+      "Grill or pan-fry chicken pieces until cooked.",
+      "Cook spices in oil, add tomato purée, simmer for 10 minutes.",
+      "Add grilled chicken to sauce and simmer for 5–10 minutes.",
+      "Serve hot with rice or naan."
+    ],
     description: "Grilled chicken in creamy spiced tomato sauce."
   },
   // Mexican
@@ -50,7 +71,12 @@ const MOCK_RECIPES = [
     name: "Tacos",
     cuisine: "Mexican",
     ingredients: ["Tortillas", "Beef", "Lettuce", "Cheese", "Salsa"],
-    steps: ["Prepare filling", "Warm tortillas", "Assemble tacos"],
+    steps: [
+      "Cook ground beef with spices until browned.",
+      "Warm tortillas in a dry skillet or microwave.",
+      "Assemble tacos by adding beef, lettuce, cheese, and salsa to each tortilla.",
+      "Fold and serve immediately."
+    ],
     description: "Folded tortillas with various savory fillings."
   },
   // French
@@ -60,10 +86,11 @@ const MOCK_RECIPES = [
     cuisine: "French",
     ingredients: ["Chicken", "Red wine", "Bacon", "Mushrooms", "Onions", "Carrots"],
     steps: [
-      "Marinate chicken in wine overnight",
-      "Brown bacon & chicken",
-      "Add vegetables and cook",
-      "Simmer until tender"
+      "Marinate chicken in red wine with vegetables overnight in fridge.",
+      "Remove chicken, pat dry and brown with bacon in a Dutch oven.",
+      "Add onions, carrots, and mushrooms; cook for 5 minutes.",
+      "Pour the marinade in, bring to simmer, cover and cook until chicken is tender (1h).",
+      "Serve with fresh parsley and rustic bread."
     ],
     description: "Classic French stew of chicken braised with wine, bacon, and vegetables."
   },
@@ -74,10 +101,11 @@ const MOCK_RECIPES = [
     cuisine: "Thai",
     ingredients: ["Rice noodles", "Egg", "Shrimp", "Tofu", "Bean sprouts", "Peanuts", "Tamarind sauce"],
     steps: [
-      "Soak noodles",
-      "Stir-fry protein and egg",
-      "Add noodles and sauce",
-      "Garnish with sprouts & peanuts"
+      "Soak rice noodles in warm water until soft, then drain.",
+      "In a hot wok, stir-fry shrimp (or tofu) and scrambled egg.",
+      "Add noodles and tamarind sauce, toss to coat evenly.",
+      "Add bean sprouts and cook for 2 more minutes.",
+      "Transfer to plate and top with chopped peanuts. Serve with lime."
     ],
     description: "Popular stir-fried noodle dish with sweet, sour, and savory flavors."
   },
@@ -88,9 +116,11 @@ const MOCK_RECIPES = [
     cuisine: "American",
     ingredients: ["Beef patty", "Burger buns", "Cheddar", "Lettuce", "Tomato", "Onion", "Pickles", "Ketchup"],
     steps: [
-      "Form and season patties",
-      "Grill to preference",
-      "Assemble on buns with toppings"
+      "Shape ground beef into patties; season with salt and pepper.",
+      "Grill or pan-fry patties to desired doneness.",
+      "Lightly toast burger buns.",
+      "Place patty on bun, add cheese, lettuce, tomato, onion, pickles, and ketchup.",
+      "Top with other half of bun and serve."
     ],
     description: "Iconic grilled beef burgers stacked with fresh toppings."
   },
@@ -101,9 +131,11 @@ const MOCK_RECIPES = [
     cuisine: "Chinese",
     ingredients: ["Chicken", "Peanuts", "Dried chili", "Bell peppers", "Soy sauce", "Ginger", "Garlic"],
     steps: [
-      "Marinate and stir-fry chicken",
-      "Add veggies and peanuts",
-      "Stir in sauce and cook through"
+      "Marinate diced chicken in soy sauce, ginger, and garlic.",
+      "Stir-fry chicken in oil over high heat until almost done.",
+      "Add bell peppers and dried chili peppers; stir-fry 2 minutes.",
+      "Stir in peanuts and sauce; cook through.",
+      "Serve hot with rice."
     ],
     description: "Spicy stir-fry with chicken, peanuts, and vegetables."
   },
@@ -114,9 +146,10 @@ const MOCK_RECIPES = [
     cuisine: "Middle Eastern",
     ingredients: ["Chickpeas", "Tahini", "Olive oil", "Garlic", "Lemon juice", "Salt"],
     steps: [
-      "Blend chickpeas, tahini, and garlic",
-      "Add lemon juice and olive oil",
-      "Season to taste"
+      "Combine chickpeas, tahini, garlic, and lemon juice in food processor.",
+      "Blend until smooth, adding olive oil slowly.",
+      "Season to taste with salt and extra lemon.",
+      "Serve drizzled with olive oil and sprinkled with paprika."
     ],
     description: "Creamy dip made from blended chickpeas, popular throughout the Middle East."
   },
@@ -127,10 +160,11 @@ const MOCK_RECIPES = [
     cuisine: "Greek",
     ingredients: ["Tomatoes", "Cucumber", "Red onion", "Kalamata olives", "Feta cheese", "Oregano", "Olive oil"],
     steps: [
-      "Chop vegetables",
-      "Add olives and feta",
-      "Drizzle with olive oil",
-      "Sprinkle with oregano and toss"
+      "Chop tomatoes, cucumber, and red onion into large chunks.",
+      "Add Kalamata olives and crumbled feta to the vegetables.",
+      "Drizzle with olive oil.",
+      "Sprinkle with oregano and toss lightly.",
+      "Serve immediately."
     ],
     description: "Fresh salad with cheese, olives, and crisp veggies."
   },
@@ -141,10 +175,12 @@ const MOCK_RECIPES = [
     cuisine: "Ethiopian",
     ingredients: ["Chicken", "Berbere spice", "Onions", "Garlic", "Ginger", "Butter", "Eggs"],
     steps: [
-      "Caramelize onions with spices",
-      "Add chicken and simmer",
-      "Add hard-boiled eggs",
-      "Serve with injera"
+      "Finely chop onions and caramelize slowly with butter in a large pot.",
+      "Add berbere spice, garlic, and ginger; cook until aromatic.",
+      "Add chicken and coat well in the spice mixture.",
+      "Pour in water or broth, cover, and simmer until the chicken is cooked.",
+      "Peel hard-boiled eggs and add during the last 10 minutes.",
+      "Serve hot with traditional injera bread."
     ],
     description: "Spicy Ethiopian chicken stew rich in flavor, usually served with injera bread."
   },
@@ -155,10 +191,11 @@ const MOCK_RECIPES = [
     cuisine: "Korean",
     ingredients: ["Rice", "Mixed vegetables", "Egg", "Beef", "Gochujang", "Sesame oil"],
     steps: [
-      "Prepare rice and vegetables",
-      "Cook beef",
-      "Fry egg",
-      "Assemble bowl and top with gochujang"
+      "Cook white rice and divide among bowls.",
+      "Sauté mixed vegetables and season lightly; cook beef separately.",
+      "Fry eggs sunny-side up.",
+      "Arrange vegetables and beef on rice, top with egg.",
+      "Drizzle with gochujang (Korean chili paste) and sesame oil before mixing to eat."
     ],
     description: "Colorful bowl of rice topped with vegetables, meat, and chili paste."
   },
@@ -169,9 +206,11 @@ const MOCK_RECIPES = [
     cuisine: "Spanish",
     ingredients: ["Short-grain rice", "Chicken", "Rabbit", "Green beans", "Tomato", "Saffron", "Olive oil"],
     steps: [
-      "Brown meats and veggies",
-      "Stir in rice and saffron",
-      "Simmer without stirring until done"
+      "Heat olive oil in a wide shallow pan, brown chicken and rabbit.",
+      "Add chopped green beans and tomato, cook a few minutes.",
+      "Stir in saffron and rice, coating grains in oil and flavors.",
+      "Add water or stock, bring to a simmer, cook uncovered without stirring until rice absorbs all liquid.",
+      "Let rest briefly before serving."
     ],
     description: "Famous Spanish rice dish infused with saffron and mixed meats."
   }

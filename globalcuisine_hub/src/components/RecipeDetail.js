@@ -80,12 +80,18 @@ function RecipeDetail() {
         ))}
       </ul>
       <div style={{ fontSize: "1.01rem", color: "#333", fontWeight: 500, marginBottom: 4 }}>
-        Steps:
+        Step-by-Step Instructions:
       </div>
       <ol style={{ marginTop: 2, marginLeft: 20, color: "#333", fontSize: "0.98rem", marginBottom: 8 }}>
-        {recipe.steps.map((step, idx) => (
-          <li key={idx}>{step}</li>
-        ))}
+        {recipe.steps && recipe.steps.length > 0 ? (
+          recipe.steps.map((step, idx) => (
+            <li key={idx} style={{ marginBottom: 6 }}>
+              {step}
+            </li>
+          ))
+        ) : (
+          <li>No instructions available.</li>
+        )}
       </ol>
       <div style={{ display: "flex", gap: 9 }}>
         {isAuthenticated && (
